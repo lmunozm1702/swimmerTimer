@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  border: 2px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+.displayed {
+  display: inline-block;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10%;
+  gap: 20px;
+}
+
+.button {
+  color: #0176de;
+  border: 3px solid #0176de;
+  border-radius: 10px;
+  height: 100px;
+  min-width: 100%;
+}
+
+.green {
+  background-color: #00aa00;
+  border: 0;
+  color: #fff;
+}
+
+.event-disable {
+  pointer-events: none;
+}
