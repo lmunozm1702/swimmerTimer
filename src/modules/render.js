@@ -18,4 +18,23 @@ function timeToString(time) {
   return `${formattedMM}:${formattedSS}.${formattedMS}`;
 }
 
-export default timeToString;
+function insertSprintTime(distance, sprint, arm) {
+  const divResultList = document.querySelector('#table-body');
+
+  const trResult = document.createElement('tr');
+  divResultList.insertBefore(trResult, divResultList.firstChild);
+
+  let newTd = document.createElement('td');
+  newTd.textContent = `${distance} m.`;
+  trResult.appendChild(newTd);
+
+  newTd = document.createElement('td');
+  newTd.textContent = timeToString(sprint);
+  trResult.appendChild(newTd);
+
+  newTd = document.createElement('td');
+  newTd.textContent = arm;
+  trResult.appendChild(newTd);
+}
+
+export { insertSprintTime, timeToString };
