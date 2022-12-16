@@ -33,7 +33,7 @@ function insertSprintTime(distance, sprint, arm) {
   trResult.appendChild(newTd);
 
   newTd = document.createElement('td');
-  newTd.textContent = arm;
+  newTd.textContent = timeToString(arm);
   trResult.appendChild(newTd);
 }
 

@@ -33,12 +33,14 @@ divStartRace.addEventListener('click', () => {
 
 divEndRace.addEventListener('click', () => {
   raceTimes.addSprint(Date.now(), 'end');
+  console.log(raceTimes);
 
   clearInterval(timerRaceInterval);
   clearInterval(timerSprintInterval);
   clearInterval(timerArmInterval);
 
-  const cycleByMin = 60 / ((raceTimes.getArmDiff() * 2) / 3);
+  // const cycleByMin = 60 / ((raceTimes.getArmDiff() * 2) / 3);
+  const cycleByMin = raceTimes.getArmDiff();
   insertSprintTime(POOL_SIZE * raceTimes.getSprintCount(), raceTimes.getSprintDiff(), cycleByMin);
 
   divEndRace.classList.add('event-disable');
@@ -49,7 +51,8 @@ divEndRace.addEventListener('click', () => {
 divSprint.addEventListener('click', () => {
   raceTimes.addSprint(Date.now());
 
-  const cycleByMin = 60 / ((raceTimes.getArmDiff() * 2));
+  // const cycleByMin = 60 / ((raceTimes.getArmDiff() * 2));
+  const cycleByMin = raceTimes.getArmDiff();
   insertSprintTime(POOL_SIZE * raceTimes.getSprintCount(), raceTimes.getSprintDiff(), cycleByMin);
 
   clearInterval(timerSprintInterval);

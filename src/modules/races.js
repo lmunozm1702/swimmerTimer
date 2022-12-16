@@ -32,6 +32,7 @@ class Race {
 
     armFreq.regType = 'Arm-Frequency'
     armFreq.regTime = time;
+    armFreq.diffTime = diffTime;
 
     this.armFreqs.push(armFreq);
     this.lastArmFreq = time;
